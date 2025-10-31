@@ -1,7 +1,12 @@
-# 🎓 Student Performance Tracker (Flask + SQLite)
+## 🎓 Student Performance Tracker (Flask + SQLite)
 
 A simple **Flask web application** to manage student data — including adding students, recording grades, viewing averages, and identifying subject toppers.  
 Built with **Python, Flask, and SQLite3**, this project demonstrates CRUD operations, data handling, and dynamic web templates.
+
+---
+
+## 👉 Access the app here:  
+🔗 [https://student-performance-tracker-3n6q.onrender.com](https://student-performance-tracker-3n6q.onrender.com)
 
 ---
 

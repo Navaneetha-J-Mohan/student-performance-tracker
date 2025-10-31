@@ -3,13 +3,13 @@ __pycache__/
 *.pyc
 *.pyo
 *.pyd
-
+*.log
 # Virtual environment
 venv/
-env/
-ENV/
-.venv/
-
+# database and backup files
+.db
+.sqlite3
+student_backup.txt
 # Local database
 students.db
 
