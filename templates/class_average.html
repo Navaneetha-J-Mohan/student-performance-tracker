@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Class Average</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; background: #e3f2fd; }
+        form { margin: 30px; }
+        input { padding: 10px; width: 200px; border-radius: 6px; border: 1px solid #ccc; }
+        button { background: #007bff; color: white; padding: 10px 15px; border: none; border-radius: 6px; cursor: pointer; }
+        button:hover { background: #0056b3; }
+        .result { margin: 20px auto; padding: 20px; background: #fff; border-radius: 10px; width: 300px; box-shadow: 0 0 8px #aaa; }
+    </style>
+</head>
+<body>
+    <h2>📊 Class Average for Subject</h2>
+    <form method="POST">
+        <input type="text" name="subject" placeholder="Enter Subject" required>
+        <button type="submit">Check</button>
+    </form>
+
+    {% if avg_score is not none %}
+    <div class="result">
+        <p><b>Subject:</b> {{ subject }}</p>
+        <p><b>Average Score:</b> {{ avg_score }}</p>
+    </div>
+    {% endif %}
+
+    <a href="/">⬅ Back to Home</a>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Subject Topper</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; background: #e8f5e9; }
+        form { margin: 30px; }
+        input { padding: 10px; width: 200px; border-radius: 6px; border: 1px solid #ccc; }
+        button { background: #4CAF50; color: white; padding: 10px 15px; border: none; border-radius: 6px; cursor: pointer; }
+        button:hover { background: #45a049; }
+        .card { margin: 30px auto; background: #fff; padding: 20px; border-radius: 10px; box-shadow: 0 0 8px #aaa; width: 300px; }
+    </style>
+</head>
+<body>
+    <h2>🏆 Find Subject Topper</h2>
+    <form method="POST">
+        <input type="text" name="subject" placeholder="Enter Subject" required>
+        <button type="submit">Search</button>
+    </form>
+
+    {% if topper %}
+    <div class="card">
+        <h3>{{ topper.name }}</h3>
+        <p><b>Roll No:</b> {{ topper.roll_number }}</p>
+        <p><b>Score:</b> {{ topper.grade }}</p>
+    </div>
+    {% endif %}
+
+    <a href="/">⬅ Back to Home</a>
+</body>
+</html>

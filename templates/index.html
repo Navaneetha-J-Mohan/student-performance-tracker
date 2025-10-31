@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Grade Tracker</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 30px; background: #f5f5f5; }
+        h1 { text-align: center; color: #333; }
+        table { width: 80%; margin: 20px auto; border-collapse: collapse; background: #fff; }
+        th, td { padding: 12px; text-align: center; border: 1px solid #ccc; }
+        th { background: #4CAF50; color: white; }
+        a { text-decoration: none; color: #007bff; }
+        a:hover { text-decoration: underline; }
+        .btn { background: #4CAF50; color: white; padding: 8px 12px; border-radius: 6px; }
+        .btn:hover { background: #45a049; }
+        .topnav { text-align: center; margin: 20px; }
+        .topnav a { margin: 0 10px; color: white; background: #007bff; padding: 10px 14px; border-radius: 5px; }
+        .topnav a:hover { background: #0056b3; }
+    </style>
+</head>
+<body>
+    <h1>🎓 Student Grade Tracker</h1>
+
+    <div class="topnav">
+        <a href="/add_student">➕ Add Student</a>
+        <a href="/subject_topper">🏆 Subject Topper</a>
+        <a href="/class_average">📊 Class Average</a>
+        <a href="/save_data">💾 Save Data</a>
+    </div>
+
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Roll No</th>
+            <th>Actions</th>
+        </tr>
+        {% for s in students %}
+        <tr>
+            <td>{{ s.id }}</td>
+            <td>{{ s.name }}</td>
+            <td>{{ s.roll_number }}</td>
+            <td>
+                <a href="/view_student/{{ s.id }}">📋 View</a> |
+                <a href="/add_grade/{{ s.id }}">➕ Add Grade</a> |
+                <a href="/delete_student/{{ s.id }}" onclick="return confirm('Delete this student?')">🗑️ Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

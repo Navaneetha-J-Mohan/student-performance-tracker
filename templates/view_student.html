@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>View Student</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #fffaf0; margin: 40px; }
+        h2 { text-align: center; }
+        table { width: 50%; margin: auto; border-collapse: collapse; background: #fff; }
+        th, td { padding: 10px; text-align: center; border: 1px solid #ccc; }
+        th { background: #ffc107; color: black; }
+        p { text-align: center; }
+    </style>
+</head>
+<body>
+    <h2>👤 {{ student.name }} ({{ student.roll_number }})</h2>
+    {% if grades %}
+    <table>
+        <tr>
+            <th>Subject</th>
+            <th>Grade</th>
+        </tr>
+        {% for g in grades %}
+        <tr>
+            <td>{{ g.subject }}</td>
+            <td>{{ g.grade }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <p><b>Average Grade:</b> {{ avg }}</p>
+    {% else %}
+    <p>No grades yet.</p>
+    {% endif %}
+    <p><a href="/">⬅ Back to Home</a></p>
+</body>
+</html>
