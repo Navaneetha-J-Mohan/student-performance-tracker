@@ -139,15 +139,14 @@ def save_data():
         headers={"Content-Disposition": "attachment;filename=student_backup.txt"}
     )
 
+ 
+# Auto-create tables if not exist
+conn = sqlite3.connect('students.db')
+conn.execute('CREATE TABLE IF NOT EXISTS students (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, roll_number TEXT UNIQUE)')
+conn.execute('CREATE TABLE IF NOT EXISTS grades (id INTEGER PRIMARY KEY AUTOINCREMENT, student_id INTEGER, subject TEXT, grade REAL)')
+conn.close()
 
-# ---------- Run ----------
+#   Run
 if __name__ == '__main__':
-    # Auto-create tables if not exist
-    conn = sqlite3.connect('students.db')
-    conn.execute('CREATE TABLE IF NOT EXISTS students (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, roll_number TEXT UNIQUE)')
-    conn.execute('CREATE TABLE IF NOT EXISTS grades (id INTEGER PRIMARY KEY AUTOINCREMENT, student_id INTEGER, subject TEXT, grade REAL)')
-    conn.close()
-
-    # Use Render-compatible host and port
     port = int(os.environ.get("PORT", 10000))
     app.run(host='0.0.0.0', port=port, debug=False)
